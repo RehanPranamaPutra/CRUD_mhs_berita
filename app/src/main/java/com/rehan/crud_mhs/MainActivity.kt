@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getData() {
         swipeRefreshLayout.isRefreshing = true
-        call = ApiClient.beritaService.getAllBerita()
+        call = ApiClient.retrofit.getAllBerita()
         call.enqueue(object : Callback<ResponseBerita>{
             override fun onResponse(
                 call: Call<ResponseBerita>,
