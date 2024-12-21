@@ -1,5 +1,6 @@
 package com.rehan.crud_mhs.service
 
+import com.rehan.crud_mhs.model.LoginResponse
 import com.rehan.crud_mhs.model.RegisterResponse
 import com.rehan.crud_mhs.model.ResponseBerita
 import retrofit2.Call
@@ -21,4 +22,12 @@ interface BeritaService {
         @Field("email") email : String,
         @Field("password") password : String
     ) : Call<RegisterResponse>
+
+    @FormUrlEncoded
+    @POST("Login.php")
+
+    fun login(
+        @Field("username") username : String,
+        @Field("password") password : String
+    ) : Call<LoginResponse>
 }
